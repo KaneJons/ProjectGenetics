@@ -86,19 +86,19 @@ namespace ProjectGenetics
             return path;   
         }
 
-        //void drawSet(List<List<Point>> population)
-        //{
-        //    scene.Children.Clear(); // Очищаем Canvas перед новым рисованием
+        void drawSet(List<List<Point>> population)
+        {
+            scene.Children.Clear(); // Очищаем Canvas перед новым рисованием
 
-        //    // Рисуем каждый маршрут из популяции
-        //    foreach (var path in population)
-        //    {
-        //        drawPath(path, false); // Отображаем маршрут с тонкими линиями
-        //    }
+            // Рисуем каждый маршрут из популяции
+            foreach (var path in population)
+            {
+                drawPath(path, false); // Отображаем маршрут с тонкими линиями
+            }
 
-        //    //// Рисуем лучший маршрут
-        //    drawPath(population[0], true); // Отображаем лучший маршрут с толстыми линиями
-        //}
+            //// Рисуем лучший маршрут
+            drawPath(population[0], true); // Отображаем лучший маршрут с толстыми линиями
+        }
 
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -106,7 +106,7 @@ namespace ProjectGenetics
             generation++;
             LGen.Content = generation.ToString();
             gen.nextGeneration(); // смена поколения
-            /*drawSet(gen.getPopulation());*/ //рисование текущего поколения 
+            drawSet(gen.getPopulation()); //рисование текущего поколения 
 
             LLen.Content = (gen.getBestFitness() / optimalLength).ToString("0.00") + "%";
             if ((gen.getBestFitness() / optimalLength) <= 100.01) //остановка алгоритма при достижении заданной точности 

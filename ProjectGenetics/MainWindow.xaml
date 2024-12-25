@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectGenetics"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800">
+        Title="MainWindow" Height="600" Width="900">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -24,7 +24,7 @@
             <Label x:Name="LGen" FontSize="14pt" />
         </StackPanel>
 
-        <Canvas x:Name="scene"/>
+        <Canvas x:Name="scene" Grid.Row="1" Background="#FFDADADA"/>
 
     </Grid>
 </Window>
